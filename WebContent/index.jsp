@@ -14,5 +14,12 @@
       <input type="text" name="name"/>
       <input type="submit" value="Say Hello"/>
    </form>
+   
+   <h1>File uploading</h1>
+   <form action="upload" method="post" enctype="multipart/form-data">
+      <label for="myFile">Upload your file</label>
+      <input type="file" name="myFile" />
+      <input type="submit" value="upload" />
+   </form>
 </body>
 </html>
