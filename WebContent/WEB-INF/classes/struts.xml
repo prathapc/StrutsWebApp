@@ -7,9 +7,15 @@
 	<constant name="struts.devMode" value="true" />
 	<package name="helloworld" extends="struts-default">
 		
-		<action name="hello" class="com.codekart.struts2.HelloWorldAction"
-			method="execute">
+		<interceptors>
+			<interceptor name="myCustomInteceptor" class="com.codekart.struts2.MyCustomInterceptor"></interceptor>
+		</interceptors>
+		<action name="hello" class="com.codekart.struts2.HelloWorldAction" method="execute">
+			<interceptor-ref name="params"></interceptor-ref>
+			<interceptor-ref name="timer"></interceptor-ref>
+			<interceptor-ref name="myCustomInteceptor"></interceptor-ref>
 			<result name="success">/HelloWorld.jsp</result>
 		</action>
+		
 	</package>
 </struts>
