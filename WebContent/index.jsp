@@ -9,10 +9,9 @@
 </head>
 <body>
    <h1>Hello World From Struts2</h1>
-   <form action="hello">
-      <label for="name">Please enter your name</label><br/>
-      <input type="text" name="name"/>
-      <input type="submit" value="Say Hello"/>
+   <form action="hello" method="post">
+      <s:textfield name="name" label="Name"></s:textfield>
+      <s:submit name="submit" label="Submit"></s:submit>
    </form>
    
    <h1>File uploading</h1>

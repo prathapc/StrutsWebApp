@@ -30,4 +30,9 @@ public class HelloWorldAction extends ActionSupport{
 		stack.push(context);
 		return "success";
 	}
+	
+	public void validate() {
+		if(name==null || name.trim().equals(""))
+			addFieldError("name", "stupid.. give ur name in text field..");
+	}
 }
