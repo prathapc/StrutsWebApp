@@ -18,7 +18,11 @@
 			<interceptor-ref name="params"></interceptor-ref>
 			<interceptor-ref name="timer"></interceptor-ref>
 			<interceptor-ref name="myCustomInteceptor"></interceptor-ref>
+			
+			<exception-mapping exception="java.lang.NullPointerException"
+         result="error" />
 			<result name="success">/HelloWorld.jsp</result>
+			<result name="error">/Error.jsp</result>
 		</action>
 
 		<action name="upload" class="com.codekart.struts2.UploadFile"
