@@ -1,6 +1,13 @@
 package com.codekart.struts2;
 
-public class HelloWorldAction {
+import java.util.HashMap;
+import java.util.Map;
+
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.util.ValueStack;
+
+public class HelloWorldAction extends ActionSupport{
 	private String name;
 
 	public String getName() {
@@ -12,6 +19,11 @@ public class HelloWorldAction {
 	}
 	
 	public String execute() throws Exception {
+		ValueStack stack = ActionContext.getContext().getValueStack();
+		Map<String,String> context = new HashMap<String,String>();
+		context.put("key1",new String("this is key1"));
+		context.put("key2", new String("this is key2"));
+		stack.push(context);
 		return "success";
 	}
 }

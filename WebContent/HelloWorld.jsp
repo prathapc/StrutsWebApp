@@ -6,5 +6,8 @@
 </head>
 <body>
    Hello World, <s:property value="name"/>
+   <h2>Value stack detials</h2>
+   <s:property value="key1"/>
+   <s:property value="key2"/>
 </body>
 </html>
